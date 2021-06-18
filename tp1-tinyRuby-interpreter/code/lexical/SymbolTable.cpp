@@ -45,10 +45,10 @@ SymbolTable::SymbolTable(){
 SymbolTable::~SymbolTable(){
 }
 
-bool contains(const std::string& token) const{
+bool SymbolTable::contains(const std::string& token) const{
 	return m_symbols.find(token) != m_symbols.end();
 }
 
-enum TokenType SymbolTable::find(const std::string& token) const{
+enum TokenType SymbolTable::find(const std::string& token){
 	return this->contains(token) ? m_symbols[token] : TT_INVALID_TOKEN;
 }
