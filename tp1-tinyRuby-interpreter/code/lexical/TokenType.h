@@ -12,6 +12,12 @@ enum TokenType {
 	// Symbols
 	TT_SEMICOLON,     	// ;
 	TT_ASSIGN,        	// =
+    TT_COMMA,         	// ,
+    TT_DOT,           	// .
+	TT_OPEN_BR,      	// [
+    TT_CLOSE_BR,     	// ]
+    TT_OPEN_PAR,      	// (
+    TT_CLOSE_PAR,     	// )
 
 	// Logic operators
 	TT_EQUAL,         	// ==
@@ -22,6 +28,8 @@ enum TokenType {
 	TT_GREATER_EQUAL, 	// >=
 	TT_CONTAINS,		// ===
 	TT_NOT,				// not
+	TT_FINC,			// ..
+	TT_FEXC,			// ...
 
 	// Arithmetic operators
 	TT_ADD,           	// +
@@ -30,32 +38,37 @@ enum TokenType {
 	TT_DIV,           	// /
 	TT_MOD,           	// %
 	TT_EXP,				// **
-	TT_FINC,			// ..
-	TT_FEXC,			// ...
 
 	// Keywords
-	TT_IF,           	// if
+	TT_IF,				// if
 	TT_UNLESS,			// unless
 	TT_WHILE,			// while
-	TT_UNTIL,           // until
+	TT_UNTIL,			// until
 	TT_FOR,				// for
 	TT_PRINT,			// print
 	TT_PUTS,			// puts
-	TT_DO,            	// do
-	TT_THEN,          	// then
-	TT_ELSE,          	// else
+	TT_DO,				// do
+	TT_THEN,			// then
+	TT_ELSE,			// else
 	TT_ELSIF,			// elsif
 	TT_RAND,			// rand
 	TT_AND,				// and
 	TT_OR,				// or
+	TT_END,				// end
+	TT_IN, 				// in
+	TT_GETS,			// gets
+	TT_LENGHT,			// lenght
+	TT_TO_I,			// to_i
+	TT_TO_S,			// to_s
 
 	// Others
-	TT_NUMBER,        	// number
-	TT_VAR            	// variable
+	TT_STR,				// string
+	TT_NUMBER,			// number
+	TT_VAR,				// variable
 };
 
-inline std::string tt2str(enum TokenType type){
-	switch (type){
+inline std::string tt2str(enum TokenType type) {
+	switch (type) {
 		// Specials
 		case TT_UNEXPECTED_EOF:
 			return "UNEXPECTED_EOF";
@@ -69,6 +82,18 @@ inline std::string tt2str(enum TokenType type){
 			return "SEMICOLON";
 		case TT_ASSIGN:
 			return "ASSIGN";
+		case TT_COMMA:
+			return "COMMA";
+		case TT_DOT:
+			return "DOT";
+		case TT_OPEN_BR:
+			return "OPEN_BR";
+		case TT_CLOSE_BR:
+			return "CLOSE_BR";
+		case TT_OPEN_PAR:
+			return "OPEN_PAR";
+		case TT_CLOSE_PAR:
+			return "CLOSE_PAR";
 
 		// Logic operators
 		case TT_EQUAL:
@@ -87,6 +112,10 @@ inline std::string tt2str(enum TokenType type){
 			return "CONTAINS";
 		case TT_NOT:
 			return "NOT";
+		case TT_FINC:
+			return "FINC";
+		case TT_FEXC:
+			return "FEXC";
 
 		// Arithmetic operators
 		case TT_ADD:
@@ -101,10 +130,6 @@ inline std::string tt2str(enum TokenType type){
 			return "MOD";
 		case TT_EXP:
 			return "EXP";
-		case TT_FINC:
-			return "FINC";
-		case TT_FEXC:
-			return "FEXC";
 
 		// Keywords
 		case TT_IF:
@@ -135,12 +160,27 @@ inline std::string tt2str(enum TokenType type){
 			return "AND";
 		case TT_OR:
 			return "OR";
+		case TT_END:
+			return "END";
+		case TT_IN:
+			return "IN";
+		case TT_GETS:
+			return "GETS";
+		case TT_LENGHT:
+			return "LENGHT";
+		case TT_TO_I:
+			return "TO_I";
+		case TT_TO_S:
+			return "TO_S";
 
 		// Others
+		case TT_STR:
+			return "STR";
 		case TT_NUMBER:
 			return "NUMBER";
 		case TT_VAR:
 			return "VAR";
+
 		default:
 			throw std::string("invalid token type");
 	}
