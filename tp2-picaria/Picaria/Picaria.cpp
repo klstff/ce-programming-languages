@@ -146,8 +146,7 @@ void Picaria::move(Hole* hole) {
 }
 
 void Picaria::switchPlayer() {
-    m_player = m_player == Picaria::RedPlayer ?
-                    Picaria::BluePlayer : Picaria::RedPlayer;
+    m_player = m_player == Picaria::RedPlayer ? Picaria::BluePlayer : Picaria::RedPlayer;
     this->updateStatusBar();
 }
 
@@ -169,20 +168,28 @@ QList<Hole*> Picaria::findSelectable(Hole* hole) {
     QList<Hole*> list;
 
     Hole* left = this->holeAt(hole->row() - 1, hole->col());
-    if (isSelectable(left))
-        list << left;
+    if (isSelectable(left)) { list << left; }
 
     Hole* up = this->holeAt(hole->row(), hole->col() - 1);
-    if (isSelectable(up))
-        list << up;
+    if (isSelectable(up)) { list << up; }
 
     Hole* right = this->holeAt(hole->row() + 1, hole->col());
-    if (isSelectable(right))
-        list << right;
+    if (isSelectable(right)) { list << right; }
 
     Hole* bottom = this->holeAt(hole->row(), hole->col() + 1);
-    if (isSelectable(bottom))
-        list << bottom;
+    if (isSelectable(bottom)) { list << bottom; }
+
+    Hole* up_left = this->holeAt(hole->row() - 1, hole->col() - 1);
+    if (isSelectable(up_left)) { list << up_left; }
+
+    Hole* up_righ = this->holeAt(hole->row() + 1, hole->col() - 1);
+    if (isSelectable(up_righ)) { list << up_righ; }
+
+    Hole* bottom_left = this->holeAt(hole->row() - 1, hole->col() + 1);
+    if (isSelectable(bottom_left)) { list << bottom_left; }
+
+    Hole* bottom_right = this->holeAt(hole->row() + 1, hole->col() + 1);
+    if (isSelectable(bottom_right)) { list << bottom_right; }
 
     return list;
 }
@@ -196,9 +203,7 @@ bool Picaria::checkRow(Player player, int col) {
         switch (tmp->state()) {
             case Hole::RedState:
             case Hole::BlueState:
-                if (state != tmp->state())
-                    return false;
-
+                if (state != tmp->state()) { return false; }
                 break;
             default:
                 return false;
@@ -217,9 +222,7 @@ bool Picaria::checkCol(Player player, int row) {
         switch (tmp->state()) {
             case Hole::RedState:
             case Hole::BlueState:
-                if (state != tmp->state())
-                    return false;
-
+                if (state != tmp->state()) { return false; }
                 break;
             default:
                 return false;
@@ -229,12 +232,52 @@ bool Picaria::checkCol(Player player, int row) {
     return true;
 }
 
+bool Picaria::checkDiagD(Player player) {
+    Hole::State state = player2state(player);
+    for(int r = 0; r < 3; r++) {
+        int c = r;
+        Hole* tmp = this->holeAt(r, c);
+        Q_ASSERT(tmp != 0);
+        switch (tmp->state()) {
+            case Hole::RedState:
+            case Hole::BlueState:
+                if (state != tmp->state()) { return false; }
+                break;
+            default:
+                return false;
+        }
+    }
+
+    return true;
+}
+
+bool Picaria::checkDiagE(Player player) {
+    Hole::State state = player2state(player);
+    int c = 2;
+    for(int r = 0; r < 3; r++) {
+        Hole* tmp = this->holeAt(r, c);
+        Q_ASSERT(tmp != 0);
+        switch (tmp->state()) {
+            case Hole::RedState:
+            case Hole::BlueState:
+                if (state != tmp->state()) { return false; }
+                break;
+            default:
+                return false;
+        }
+        c--;
+    }
+
+    return true;
+}
+
 bool Picaria::isGameOver(Hole* hole) {
     Picaria::Player player = state2player(hole->state());
-    return this->checkRow(player, hole->col()) || this->checkCol(player, hole->row());
+    return this->checkRow(player, hole->col()) || this->checkCol(player, hole->row()) || this->checkDiagD(player) || this->checkDiagE(player);
 }
 
 void Picaria::reset() {
+    
     for (int id = 0; id < 9; id++) {
         Hole* hole = m_holes[id];
         hole->reset();
@@ -248,10 +291,6 @@ void Picaria::reset() {
     this->updateStatusBar();
 }
 
-void Picaria::showAbout() {
-    QMessageBox::information(this, tr("About"), tr("Picaria\n\nKelly Steffany Silva - kelly.stff@gmail.com"));
-}
-
 void Picaria::showGameOver(Player player) {
     switch (player) {
         case Picaria::RedPlayer:
@@ -263,6 +302,10 @@ void Picaria::showGameOver(Player player) {
         default:
             Q_UNREACHABLE();
     }
+}
+
+void Picaria::showAbout() {
+    QMessageBox::information(this, tr("About"), tr("Picaria\n\nKelly Steffany Silva - kelly.stff@gmail.com"));
 }
 
 void Picaria::updateStatusBar() {

@@ -2,7 +2,7 @@
 
 Hole::Hole(QWidget *parent)
     : QPushButton(parent),
-      m_row(0), m_col(0), m_state(Hole::EmptyState) {
+      m_row(0), m_col(0), m_state(Hole::EmptyState) {   
     QObject::connect(this, SIGNAL(stateChanged(Hole::State)),
                      this, SLOT(updateHole(Hole::State)));
 }

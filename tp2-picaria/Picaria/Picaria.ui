@@ -501,8 +501,8 @@
     <property name="title">
      <string>Modo</string>
     </property>
-    <addaction name="action9_Buracos"/>
-    <addaction name="action13_Buracos"/>
+    <addaction name="action9_holes"/>
+    <addaction name="action13_holes"/>
    </widget>
    <addaction name="menuJogo"/>
    <addaction name="menuModo"/>
@@ -524,12 +524,12 @@
     <string>Ajuda</string>
    </property>
   </action>
-  <action name="action9_Buracos">
+  <action name="action9_holes">
    <property name="text">
     <string>9 Buracos</string>
    </property>
   </action>
-  <action name="action13_Buracos">
+  <action name="action13_holes">
    <property name="text">
     <string>13 Buracos</string>
    </property>

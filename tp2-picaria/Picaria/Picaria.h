@@ -32,7 +32,7 @@ public:
 
 signals:
     void gameOver(Player player);
-
+    
 private:
     Ui::Picaria *ui;
     Hole* m_holes[9];
@@ -40,6 +40,7 @@ private:
     Phase m_phase;
     int m_dropCount;
     Hole* m_selected;
+    
 
     void drop(Hole* hole);
     void move(Hole* hole);
@@ -50,6 +51,8 @@ private:
 
     bool checkRow(Player player, int col);
     bool checkCol(Player player, int row);
+    bool checkDiagD(Player player);
+    bool checkDiagE(Player player);
     bool isGameOver(Hole* hole);
 
 private slots:

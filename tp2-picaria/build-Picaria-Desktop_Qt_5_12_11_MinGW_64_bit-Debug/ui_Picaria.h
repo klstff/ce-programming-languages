@@ -28,8 +28,8 @@ public:
     QAction *actionNew;
     QAction *actionQuit;
     QAction *actionAbout;
-    QAction *action9_Buracos;
-    QAction *action13_Buracos;
+    QAction *action9_holes;
+    QAction *action13_holes;
     QWidget *centralwidget;
     Hole *hole00;
     Hole *hole01;
@@ -60,10 +60,10 @@ public:
         actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
         actionAbout = new QAction(Picaria);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
-        action9_Buracos = new QAction(Picaria);
-        action9_Buracos->setObjectName(QString::fromUtf8("action9_Buracos"));
-        action13_Buracos = new QAction(Picaria);
-        action13_Buracos->setObjectName(QString::fromUtf8("action13_Buracos"));
+        action9_holes = new QAction(Picaria);
+        action9_holes->setObjectName(QString::fromUtf8("action9_holes"));
+        action13_holes = new QAction(Picaria);
+        action13_holes->setObjectName(QString::fromUtf8("action13_holes"));
         centralwidget = new QWidget(Picaria);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -225,8 +225,8 @@ public:
         menuJogo->addAction(actionNew);
         menuJogo->addAction(actionQuit);
         menuSobre->addAction(actionAbout);
-        menuModo->addAction(action9_Buracos);
-        menuModo->addAction(action13_Buracos);
+        menuModo->addAction(action9_holes);
+        menuModo->addAction(action13_holes);
 
         retranslateUi(Picaria);
 
@@ -239,8 +239,8 @@ public:
         actionNew->setText(QApplication::translate("Picaria", "Novo", nullptr));
         actionQuit->setText(QApplication::translate("Picaria", "Sair", nullptr));
         actionAbout->setText(QApplication::translate("Picaria", "Ajuda", nullptr));
-        action9_Buracos->setText(QApplication::translate("Picaria", "9 Buracos", nullptr));
-        action13_Buracos->setText(QApplication::translate("Picaria", "13 Buracos", nullptr));
+        action9_holes->setText(QApplication::translate("Picaria", "9 Buracos", nullptr));
+        action13_holes->setText(QApplication::translate("Picaria", "13 Buracos", nullptr));
         menuJogo->setTitle(QApplication::translate("Picaria", "Jogo", nullptr));
         menuSobre->setTitle(QApplication::translate("Picaria", "Sobre", nullptr));
         menuModo->setTitle(QApplication::translate("Picaria", "Modo", nullptr));
