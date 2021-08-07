@@ -3,18 +3,18 @@
 
 #include <QPushButton>
 
-class Hole : public QPushButton{
+class Hole : public QPushButton {
     Q_OBJECT
     Q_PROPERTY(int row READ row WRITE setRow)
     Q_PROPERTY(int col READ col WRITE setCol)
     Q_PROPERTY(Hole::State state READ state WRITE setState NOTIFY stateChanged)
 
 public:
-    enum State{
-        Empty,
-        Red,
-        Blue,
-        Selectable
+    enum State {
+        EmptyState,
+        RedState,
+        BlueState,
+        SelectableState
     };
     Q_ENUM(State)
 
@@ -30,8 +30,11 @@ public:
     Hole::State state() const { return m_state; }
     void setState(Hole::State state);
 
+public slots:
+    void reset();
+
 signals:
-    void stateChanged(Hole::State old_state, Hole::State new_state);
+    void stateChanged(Hole::State state);
 
 private:
     int m_row;
@@ -41,7 +44,8 @@ private:
     static QPixmap state2pixmap(Hole::State state);
 
 private slots:
-    void updateHole(Hole::State old_state, Hole::State new_state);
+    void updateHole(Hole::State state);
+
 };
 
 #endif // HOLE_H

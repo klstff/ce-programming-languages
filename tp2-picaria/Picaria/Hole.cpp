@@ -2,40 +2,41 @@
 
 Hole::Hole(QWidget *parent)
     : QPushButton(parent),
-      m_row(0), m_col(0), m_state(Hole::Empty) {
-    QObject::connect(this, SIGNAL(stateChanged(Hole::State,Hole::State)),
-                     this, SLOT(updateHole(Hole::State,Hole::State)));
+      m_row(0), m_col(0), m_state(Hole::EmptyState) {
+    QObject::connect(this, SIGNAL(stateChanged(Hole::State)),
+                     this, SLOT(updateHole(Hole::State)));
 }
 
 Hole::~Hole() {
 }
 
 void Hole::setState(Hole::State state) {
-    if(m_state != state){
-        Hole::State old = m_state;
-
+    if (m_state != state) {
         m_state = state;
-        emit stateChanged(old, state);
+        emit stateChanged(state);
     }
 }
 
-QPixmap Hole::state2pixmap(Hole::State state){
+void Hole::reset() {
+    m_state = Hole::EmptyState;
+    this->updateHole(m_state);
+}
+
+QPixmap Hole::state2pixmap(Hole::State state) {
     switch (state) {
-        case Hole::Empty:
+        case Hole::EmptyState:
             return QPixmap(":/empty");
-        case Hole::Red:
+        case Hole::RedState:
             return QPixmap(":/red");
-        case Hole::Blue:
+        case Hole::BlueState:
             return QPixmap(":/blue");
-        case Hole::Selectable:
+        case Hole::SelectableState:
             return QPixmap(":/selectable");
         default:
             return QPixmap();
     }
 }
 
-void Hole::updateHole(Hole::State old_state, Hole::State new_state){
-    Q_UNUSED(old_state);
-
-    this->setIcon(Hole::state2pixmap(new_state));
+void Hole::updateHole(Hole::State state) {
+    this->setIcon(Hole::state2pixmap(state));
 }

@@ -2,24 +2,16 @@
 <ui version="4.0">
  <class>Picaria</class>
  <widget class="QMainWindow" name="Picaria">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>300</width>
-    <height>350</height>
-   </rect>
-  </property>
   <property name="minimumSize">
    <size>
-    <width>300</width>
-    <height>300</height>
+    <width>500</width>
+    <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>300</width>
-    <height>350</height>
+    <width>500</width>
+    <height>550</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -40,15 +32,18 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>300</width>
-     <height>300</height>
+     <width>500</width>
+     <height>500</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>300</width>
-     <height>300</height>
+     <width>500</width>
+     <height>500</height>
     </size>
+   </property>
+   <property name="toolTipDuration">
+    <number>0</number>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
@@ -56,399 +51,436 @@
    <property name="styleSheet">
     <string notr="true">#centralwidget {background: url(':/grid');}</string>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <property name="leftMargin">
+   <widget class="Hole" name="hole00">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: none;
+	outline: none;
+}</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
      <number>0</number>
     </property>
-    <property name="topMargin">
+    <property name="col" stdset="0">
      <number>0</number>
     </property>
-    <property name="rightMargin">
+   </widget>
+   <widget class="Hole" name="hole01">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: none;
+	outline: none;
+}</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
      <number>0</number>
     </property>
-    <property name="bottomMargin">
+    <property name="col" stdset="0">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="Hole" name="hole02">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>0</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: none;
+	outline: none;
+}</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
      <number>0</number>
     </property>
-    <property name="spacing">
+    <property name="col" stdset="0">
+     <number>2</number>
+    </property>
+   </widget>
+   <widget class="Hole" name="hole10">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>200</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border: none;
+	outline: none;
+}</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="col" stdset="0">
      <number>0</number>
     </property>
-    <item row="0" column="0">
-     <widget class="Hole" name="hole00">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+   </widget>
+   <widget class="Hole" name="hole11">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>200</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
 	border: none;
 	outline: none;
 }</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>0</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="Hole" name="hole01">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="col" stdset="0">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="Hole" name="hole12">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>200</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
 	border: none;
 	outline: none;
 }</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>0</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>1</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="Hole" name="hole02">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="col" stdset="0">
+     <number>2</number>
+    </property>
+   </widget>
+   <widget class="Hole" name="hole20">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>400</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
 	border: none;
 	outline: none;
 }</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>0</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>2</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="Hole" name="hole10">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
+     <number>2</number>
+    </property>
+    <property name="col" stdset="0">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="Hole" name="hole21">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>400</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
 	border: none;
 	outline: none;
 }</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>1</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="Hole" name="hole11">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
+     <number>2</number>
+    </property>
+    <property name="col" stdset="0">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="Hole" name="hole22">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>400</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
 	border: none;
 	outline: none;
 }</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>1</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>1</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="Hole" name="hole12">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	border: none;
-	outline: none;
-}</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>1</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>2</number>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="Hole" name="hole20">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	border: none;
-	outline: none;
-}</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>2</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="Hole" name="hole21">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	border: none;
-	outline: none;
-}</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>2</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>1</number>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="Hole" name="hole22">
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-	border: none;
-	outline: none;
-}</string>
-      </property>
-      <property name="icon">
-       <iconset resource="Picaria.qrc">
-        <normaloff>:/empty</normaloff>:/empty</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>50</width>
-        <height>50</height>
-       </size>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-      <property name="row" stdset="0">
-       <number>2</number>
-      </property>
-      <property name="col" stdset="0">
-       <number>2</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/empty</normaloff>:/empty</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="row" stdset="0">
+     <number>2</number>
+    </property>
+    <property name="col" stdset="0">
+     <number>2</number>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>300</width>
+     <width>500</width>
      <height>25</height>
     </rect>
    </property>
@@ -456,14 +488,14 @@
     <property name="title">
      <string>Jogo</string>
     </property>
-    <addaction name="actionNovo"/>
-    <addaction name="actionSair"/>
+    <addaction name="actionNew"/>
+    <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuSobre">
     <property name="title">
      <string>Sobre</string>
     </property>
-    <addaction name="actionAjuda"/>
+    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuModo">
     <property name="title">
@@ -477,17 +509,17 @@
    <addaction name="menuSobre"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionNovo">
+  <action name="actionNew">
    <property name="text">
     <string>Novo</string>
    </property>
   </action>
-  <action name="actionSair">
+  <action name="actionQuit">
    <property name="text">
     <string>Sair</string>
    </property>
   </action>
-  <action name="actionAjuda">
+  <action name="actionAbout">
    <property name="text">
     <string>Ajuda</string>
    </property>
@@ -510,8 +542,6 @@
    <header location="global">Hole.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="Picaria.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
