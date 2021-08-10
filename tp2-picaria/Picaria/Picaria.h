@@ -4,15 +4,24 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class Picaria; }
+namespace Ui {
+    class Picaria;
+}
 QT_END_NAMESPACE
 
 class Hole;
 
 class Picaria : public QMainWindow {
     Q_OBJECT
+    Q_PROPERTY(Picaria::Mode mode READ mode WRITE setMode NOTIFY gameMode)
 
 public:
+    enum Mode {
+        NineHoles,
+        ThirteenHoles
+    };
+    Q_ENUM(Mode)
+
     enum Player {
         RedPlayer,
         BluePlayer
@@ -28,40 +37,40 @@ public:
     Picaria(QWidget *parent = nullptr);
     virtual ~Picaria();
 
-    Hole* holeAt(int row, int col) const;
+    Picaria::Mode mode() const { return m_mode; }
+    void setMode(Picaria::Mode mode);
 
 signals:
-    void gameOver(Player player);
-    
+    void gameMode(Picaria::Mode mode);
+    void gameOver(Picaria::Player player);
+
 private:
     Ui::Picaria *ui;
-    Hole* m_holes[9];
+    int m_dropCount = 0;
+    Hole* previousHole;
+    Hole* m_holes[13];
+    Mode m_mode;
     Player m_player;
     Phase m_phase;
-    int m_dropCount;
-    Hole* m_selected;
-    
-
-    void drop(Hole* hole);
-    void move(Hole* hole);
 
     void switchPlayer();
-    void clearSelectable();
-    QList<Hole*> findSelectable(Hole* hole);
-
-    bool checkRow(Player player, int col);
-    bool checkCol(Player player, int row);
-    bool checkDiagD(Player player);
-    bool checkDiagE(Player player);
-    bool isGameOver(Hole* hole);
+    void drop(Hole* hole);
+    void move(Hole* hole);
+    void findSelectable(Hole* hole);
+    void clearSelectables();
+    bool isGameOver();
 
 private slots:
     void play(int id);
     void reset();
+    void setHoleNeighbors();
+
     void showAbout();
-    void showGameOver(Player player);
+    void showGameOver();
+
+    void updateMode(QAction* action);
     void updateStatusBar();
 
 };
 
-#endif // Picaria_H
+#endif // PICARIA_H

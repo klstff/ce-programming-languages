@@ -28,18 +28,22 @@ public:
     QAction *actionNew;
     QAction *actionQuit;
     QAction *actionAbout;
-    QAction *action9_holes;
-    QAction *action13_holes;
+    QAction *action9holes;
+    QAction *action13holes;
     QWidget *centralwidget;
-    Hole *hole00;
     Hole *hole01;
     Hole *hole02;
+    Hole *hole03;
+    Hole *hole04;
+    Hole *hole05;
+    Hole *hole06;
+    Hole *hole07;
+    Hole *hole08;
+    Hole *hole09;
     Hole *hole10;
     Hole *hole11;
     Hole *hole12;
-    Hole *hole20;
-    Hole *hole21;
-    Hole *hole22;
+    Hole *hole13;
     QMenuBar *menubar;
     QMenu *menuJogo;
     QMenu *menuSobre;
@@ -50,6 +54,7 @@ public:
     {
         if (Picaria->objectName().isEmpty())
             Picaria->setObjectName(QString::fromUtf8("Picaria"));
+        Picaria->resize(500, 550);
         Picaria->setMinimumSize(QSize(500, 500));
         Picaria->setMaximumSize(QSize(500, 550));
         Picaria->setAutoFillBackground(false);
@@ -60,10 +65,10 @@ public:
         actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
         actionAbout = new QAction(Picaria);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
-        action9_holes = new QAction(Picaria);
-        action9_holes->setObjectName(QString::fromUtf8("action9_holes"));
-        action13_holes = new QAction(Picaria);
-        action13_holes->setObjectName(QString::fromUtf8("action13_holes"));
+        action9holes = new QAction(Picaria);
+        action9holes->setObjectName(QString::fromUtf8("action9holes"));
+        action13holes = new QAction(Picaria);
+        action13holes->setObjectName(QString::fromUtf8("action13holes"));
         centralwidget = new QWidget(Picaria);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -76,39 +81,25 @@ public:
         centralwidget->setToolTipDuration(0);
         centralwidget->setAutoFillBackground(false);
         centralwidget->setStyleSheet(QString::fromUtf8("#centralwidget {background: url(':/grid');}"));
-        hole00 = new Hole(centralwidget);
-        hole00->setObjectName(QString::fromUtf8("hole00"));
-        hole00->setGeometry(QRect(0, 0, 100, 100));
-        hole00->setMinimumSize(QSize(100, 100));
-        hole00->setMaximumSize(QSize(100, 100));
-        hole00->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border: none;\n"
-"	outline: none;\n"
-"}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/empty"), QSize(), QIcon::Normal, QIcon::Off);
-        hole00->setIcon(icon);
-        hole00->setIconSize(QSize(50, 50));
-        hole00->setFlat(true);
-        hole00->setProperty("row", QVariant(0));
-        hole00->setProperty("col", QVariant(0));
         hole01 = new Hole(centralwidget);
         hole01->setObjectName(QString::fromUtf8("hole01"));
-        hole01->setGeometry(QRect(200, 0, 100, 100));
+        hole01->setGeometry(QRect(0, 0, 100, 100));
         hole01->setMinimumSize(QSize(100, 100));
         hole01->setMaximumSize(QSize(100, 100));
         hole01->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border: none;\n"
 "	outline: none;\n"
 "}"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/empty"), QSize(), QIcon::Normal, QIcon::Off);
         hole01->setIcon(icon);
         hole01->setIconSize(QSize(50, 50));
         hole01->setFlat(true);
         hole01->setProperty("row", QVariant(0));
-        hole01->setProperty("col", QVariant(1));
+        hole01->setProperty("col", QVariant(0));
         hole02 = new Hole(centralwidget);
         hole02->setObjectName(QString::fromUtf8("hole02"));
-        hole02->setGeometry(QRect(400, 0, 100, 100));
+        hole02->setGeometry(QRect(200, 0, 100, 100));
         hole02->setMinimumSize(QSize(100, 100));
         hole02->setMaximumSize(QSize(100, 100));
         hole02->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -119,10 +110,108 @@ public:
         hole02->setIconSize(QSize(50, 50));
         hole02->setFlat(true);
         hole02->setProperty("row", QVariant(0));
-        hole02->setProperty("col", QVariant(2));
+        hole02->setProperty("col", QVariant(1));
+        hole03 = new Hole(centralwidget);
+        hole03->setObjectName(QString::fromUtf8("hole03"));
+        hole03->setGeometry(QRect(400, 0, 100, 100));
+        hole03->setMinimumSize(QSize(100, 100));
+        hole03->setMaximumSize(QSize(100, 100));
+        hole03->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole03->setIcon(icon);
+        hole03->setIconSize(QSize(50, 50));
+        hole03->setFlat(true);
+        hole03->setProperty("row", QVariant(0));
+        hole03->setProperty("col", QVariant(2));
+        hole04 = new Hole(centralwidget);
+        hole04->setObjectName(QString::fromUtf8("hole04"));
+        hole04->setGeometry(QRect(100, 100, 100, 100));
+        hole04->setMinimumSize(QSize(100, 100));
+        hole04->setMaximumSize(QSize(100, 100));
+        hole04->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole04->setIcon(icon);
+        hole04->setIconSize(QSize(50, 50));
+        hole04->setFlat(true);
+        hole04->setProperty("row", QVariant(1));
+        hole04->setProperty("col", QVariant(0));
+        hole05 = new Hole(centralwidget);
+        hole05->setObjectName(QString::fromUtf8("hole05"));
+        hole05->setGeometry(QRect(300, 100, 100, 100));
+        hole05->setMinimumSize(QSize(100, 100));
+        hole05->setMaximumSize(QSize(100, 100));
+        hole05->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole05->setIcon(icon);
+        hole05->setIconSize(QSize(50, 50));
+        hole05->setFlat(true);
+        hole05->setProperty("row", QVariant(1));
+        hole05->setProperty("col", QVariant(1));
+        hole06 = new Hole(centralwidget);
+        hole06->setObjectName(QString::fromUtf8("hole06"));
+        hole06->setGeometry(QRect(0, 200, 100, 100));
+        hole06->setMinimumSize(QSize(100, 100));
+        hole06->setMaximumSize(QSize(100, 100));
+        hole06->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole06->setIcon(icon);
+        hole06->setIconSize(QSize(50, 50));
+        hole06->setFlat(true);
+        hole06->setProperty("row", QVariant(1));
+        hole06->setProperty("col", QVariant(2));
+        hole07 = new Hole(centralwidget);
+        hole07->setObjectName(QString::fromUtf8("hole07"));
+        hole07->setGeometry(QRect(200, 200, 100, 100));
+        hole07->setMinimumSize(QSize(100, 100));
+        hole07->setMaximumSize(QSize(100, 100));
+        hole07->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole07->setIcon(icon);
+        hole07->setIconSize(QSize(50, 50));
+        hole07->setFlat(true);
+        hole07->setProperty("row", QVariant(2));
+        hole07->setProperty("col", QVariant(0));
+        hole08 = new Hole(centralwidget);
+        hole08->setObjectName(QString::fromUtf8("hole08"));
+        hole08->setGeometry(QRect(400, 200, 100, 100));
+        hole08->setMinimumSize(QSize(100, 100));
+        hole08->setMaximumSize(QSize(100, 100));
+        hole08->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole08->setIcon(icon);
+        hole08->setIconSize(QSize(50, 50));
+        hole08->setFlat(true);
+        hole08->setProperty("row", QVariant(2));
+        hole08->setProperty("col", QVariant(1));
+        hole09 = new Hole(centralwidget);
+        hole09->setObjectName(QString::fromUtf8("hole09"));
+        hole09->setGeometry(QRect(100, 300, 100, 100));
+        hole09->setMinimumSize(QSize(100, 100));
+        hole09->setMaximumSize(QSize(100, 100));
+        hole09->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border: none;\n"
+"	outline: none;\n"
+"}"));
+        hole09->setIcon(icon);
+        hole09->setIconSize(QSize(50, 50));
+        hole09->setFlat(true);
+        hole09->setProperty("row", QVariant(2));
+        hole09->setProperty("col", QVariant(2));
         hole10 = new Hole(centralwidget);
         hole10->setObjectName(QString::fromUtf8("hole10"));
-        hole10->setGeometry(QRect(0, 200, 100, 100));
+        hole10->setGeometry(QRect(300, 300, 100, 100));
         hole10->setMinimumSize(QSize(100, 100));
         hole10->setMaximumSize(QSize(100, 100));
         hole10->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -132,11 +221,11 @@ public:
         hole10->setIcon(icon);
         hole10->setIconSize(QSize(50, 50));
         hole10->setFlat(true);
-        hole10->setProperty("row", QVariant(1));
-        hole10->setProperty("col", QVariant(0));
+        hole10->setProperty("row", QVariant(2));
+        hole10->setProperty("col", QVariant(2));
         hole11 = new Hole(centralwidget);
         hole11->setObjectName(QString::fromUtf8("hole11"));
-        hole11->setGeometry(QRect(200, 200, 100, 100));
+        hole11->setGeometry(QRect(0, 400, 100, 100));
         hole11->setMinimumSize(QSize(100, 100));
         hole11->setMaximumSize(QSize(100, 100));
         hole11->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -146,11 +235,11 @@ public:
         hole11->setIcon(icon);
         hole11->setIconSize(QSize(50, 50));
         hole11->setFlat(true);
-        hole11->setProperty("row", QVariant(1));
-        hole11->setProperty("col", QVariant(1));
+        hole11->setProperty("row", QVariant(2));
+        hole11->setProperty("col", QVariant(2));
         hole12 = new Hole(centralwidget);
         hole12->setObjectName(QString::fromUtf8("hole12"));
-        hole12->setGeometry(QRect(400, 200, 100, 100));
+        hole12->setGeometry(QRect(200, 400, 100, 100));
         hole12->setMinimumSize(QSize(100, 100));
         hole12->setMaximumSize(QSize(100, 100));
         hole12->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -160,50 +249,22 @@ public:
         hole12->setIcon(icon);
         hole12->setIconSize(QSize(50, 50));
         hole12->setFlat(true);
-        hole12->setProperty("row", QVariant(1));
+        hole12->setProperty("row", QVariant(2));
         hole12->setProperty("col", QVariant(2));
-        hole20 = new Hole(centralwidget);
-        hole20->setObjectName(QString::fromUtf8("hole20"));
-        hole20->setGeometry(QRect(0, 400, 100, 100));
-        hole20->setMinimumSize(QSize(100, 100));
-        hole20->setMaximumSize(QSize(100, 100));
-        hole20->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        hole13 = new Hole(centralwidget);
+        hole13->setObjectName(QString::fromUtf8("hole13"));
+        hole13->setGeometry(QRect(400, 400, 100, 100));
+        hole13->setMinimumSize(QSize(100, 100));
+        hole13->setMaximumSize(QSize(100, 100));
+        hole13->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border: none;\n"
 "	outline: none;\n"
 "}"));
-        hole20->setIcon(icon);
-        hole20->setIconSize(QSize(50, 50));
-        hole20->setFlat(true);
-        hole20->setProperty("row", QVariant(2));
-        hole20->setProperty("col", QVariant(0));
-        hole21 = new Hole(centralwidget);
-        hole21->setObjectName(QString::fromUtf8("hole21"));
-        hole21->setGeometry(QRect(200, 400, 100, 100));
-        hole21->setMinimumSize(QSize(100, 100));
-        hole21->setMaximumSize(QSize(100, 100));
-        hole21->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border: none;\n"
-"	outline: none;\n"
-"}"));
-        hole21->setIcon(icon);
-        hole21->setIconSize(QSize(50, 50));
-        hole21->setFlat(true);
-        hole21->setProperty("row", QVariant(2));
-        hole21->setProperty("col", QVariant(1));
-        hole22 = new Hole(centralwidget);
-        hole22->setObjectName(QString::fromUtf8("hole22"));
-        hole22->setGeometry(QRect(400, 400, 100, 100));
-        hole22->setMinimumSize(QSize(100, 100));
-        hole22->setMaximumSize(QSize(100, 100));
-        hole22->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border: none;\n"
-"	outline: none;\n"
-"}"));
-        hole22->setIcon(icon);
-        hole22->setIconSize(QSize(50, 50));
-        hole22->setFlat(true);
-        hole22->setProperty("row", QVariant(2));
-        hole22->setProperty("col", QVariant(2));
+        hole13->setIcon(icon);
+        hole13->setIconSize(QSize(50, 50));
+        hole13->setFlat(true);
+        hole13->setProperty("row", QVariant(2));
+        hole13->setProperty("col", QVariant(2));
         Picaria->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Picaria);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -225,8 +286,8 @@ public:
         menuJogo->addAction(actionNew);
         menuJogo->addAction(actionQuit);
         menuSobre->addAction(actionAbout);
-        menuModo->addAction(action9_holes);
-        menuModo->addAction(action13_holes);
+        menuModo->addAction(action9holes);
+        menuModo->addAction(action13holes);
 
         retranslateUi(Picaria);
 
@@ -239,8 +300,8 @@ public:
         actionNew->setText(QApplication::translate("Picaria", "Novo", nullptr));
         actionQuit->setText(QApplication::translate("Picaria", "Sair", nullptr));
         actionAbout->setText(QApplication::translate("Picaria", "Ajuda", nullptr));
-        action9_holes->setText(QApplication::translate("Picaria", "9 Buracos", nullptr));
-        action13_holes->setText(QApplication::translate("Picaria", "13 Buracos", nullptr));
+        action9holes->setText(QApplication::translate("Picaria", "9 Buracos", nullptr));
+        action13holes->setText(QApplication::translate("Picaria", "13 Buracos", nullptr));
         menuJogo->setTitle(QApplication::translate("Picaria", "Jogo", nullptr));
         menuSobre->setTitle(QApplication::translate("Picaria", "Sobre", nullptr));
         menuModo->setTitle(QApplication::translate("Picaria", "Modo", nullptr));
